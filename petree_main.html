@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="static-files/img/favicon.ico">
+    <link rel="stylesheet" href="static-files/font/Icomoon-petree/style.css">
+    <script src="/static-files/js/library/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="main.css?v=2">
+    <link rel="stylesheet" href="fonts.css?v=2">
+    <title>petree</title>
+</head>
+
+<body>
+    <header id="header" class="main-header pad-sides-70">
+        <div class="p-container">
+            <div class="header-cont">
+                <a href="#" class="logo"><img src="static-files/img/logo.svg" alt=""></a>
+
+                <div class="h-right">
+                    <div id="menu" class="main-menu">
+                        <a href="#" class="h-link">About</a>
+                        <a href="#" class="h-link">How it works</a>
+                        <a href="#" class="h-link">Partnership</a>
+                        <a href="#" class="h-link">FAQ</a>
+                        <a href="#" class="h-link">Contact</a>
+                        <a href="#" class="h-link">About</a>
+                        <a href="#" class="h-link">How it works</a>
+                        <a href="#" class="h-link">Partnership</a>
+                        <a href="#" class="h-link">FAQ</a>
+                        <a href="#" class="h-link">Contact</a>
+                    </div>
+                    <div class="h-buttons">
+                        <div class="cs-dropdown lang-variant" data-value="">
+                            <button id="lang-button" class="cs-drop-toggle p-btn btn-link btn-dark-green btn-sm"><span
+                                    class="btn-inner"><img src="/static-files/img/english.png" alt="">En</span></button>
+                            <div class="cs-dropdown-list">
+                                <div class="drop-list-wrapper">
+                                    <a href="#" class="drop-link" data-value="ua">
+                                        <div class="lang-item"><img src="/static-files/img/ukarainian.jpg" alt="">
+                                            <span>UA</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="drop-link" data-value="pl">
+                                        <div class="lang-item"><img src="/static-files/img/polski.png" alt="">
+                                            <span>PL</span>
+                                        </div>
+                                    </a>
+                                    <a href="#" class="drop-link" data-value="fr">
+                                        <div class="lang-item"><img src="/static-files/img/francais.png" alt="">
+                                            <span>FR</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-buttons">
+                            <button class="p-btn btn-stroke btn-dark-green btn-sm">
+                                <span class="btn-inner">Sign in</span>
+                            </button>
+                            <button class="p-btn btn-solid btn-dark-green btn-sm btn-dotted"
+                                data-target="#m-registration">
+                                <span class="btn-inner">Get started</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="page-main home-page">
+        <section id="hero" class="s-wrapper pad-sides-70">
+            <div class="p-container">
+                <div class="hero-cont">
+                    <div class="hero-main">
+                        <div class="hero-left">
+                            <div class="hero-txt">
+                                <h1 class="display-1 main-title">
+                                    <b>Green</b> Assets Tokenised For Your Profit
+                                </h1>
+                                <h5 class="main-subtitle">
+                                    Secure your future. Invest in paulownia trees through blockchain tokenization
+                                </h5>
+                            </div>
+                            <div class="button-box">
+                                <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted" data-target="#m-registration">
+                                    <span class="btn-inner"><span class="ico ico-token-stroke"></span>Buy token</span>
+                                </button>
+                                <a href="#" class="p-btn btn-solid btn-white-blur btn-lg">
+                                    <span class="btn-inner">Learn more</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="hero-right">
+                            <div class="info">
+                                <div class="icon">
+                                    <span class="ico ico-info"></span>
+                                </div>
+                                <div class="info-box pad-40 br-40">
+                                    <strong class="sm-block-title">Paulownia</strong>
+                                    <span>— the fastest growing tree in the world</span>
+                                </div>
+                            </div>
+                            <div class="chart-dash wrap-1">
+                                <div class="chart-dash wrap-2">
+                                    <div class="chart-dash wrap-3">
+                                        <div class="chart-box br-40">
+                                            <strong class="sm-block-title">
+                                                Annual <br>income
+                                            </strong>
+                                            <div class="chart-values">
+                                                <div class="ch-col col-1">
+                                                    <span class="label">1y</span>
+                                                    <div class="ch-pillar"></div>
+                                                </div>
+                                                <div class="ch-col col-2">
+                                                    <span class="label">3y</span>
+                                                    <div class="ch-pillar"></div>
+                                                </div>
+                                                <div class="ch-col col-3">
+                                                    <span class="label">5y</span>
+                                                    <div class="ch-pillar"></div>
+                                                </div>
+                                                <div class="ch-col col-4">
+                                                    <span class="label">8y</span>
+                                                    <div class="ch-pillar"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-wrapper">
+                        <div class="list-box blur br-40">
+                            <div class="inner-list pad-40">
+                                <div class="item">
+                                    <div class="icon">
+                                        <span class="ico ico-tree-filled"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="connector">
+                                            <img src="static-files/img/connector.svg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <span>1 token</span>
+                                            <strong>1 tree</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <span class="ico ico-price-tag-filled"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="connector">
+                                            <img src="static-files/img/connector.svg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <span>Token price</span>
+                                            <strong>100 €</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dotted-back">
+
+                            </div>
+                        </div>
+                        <div class="list-box dark-green br-40">
+                            <div class="inner-list pad-40">
+                                <div class="item">
+                                    <div class="icon">
+                                        <span class="ico ico-leaf-filled"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="connector">
+                                            <img src="static-files/img/connector.svg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <span>1 tree</span>
+                                            <div class="line">
+                                                <strong>1</strong>
+                                                <div class="carbon">
+                                                    <small>6</small>
+                                                    <b>C</b>
+                                                </div>
+                                                <strong>credit</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <span class="ico ico-euro"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="connector">
+                                            <img src="static-files/img/connector.svg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <span>Annual returns</span>
+                                            <strong>9%</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <span class="ico ico-crown"></span>
+                                    </div>
+                                    <div class="text-box">
+                                        <div class="connector">
+                                            <img src="static-files/img/connector.svg" alt="">
+                                        </div>
+                                        <div class="text">
+                                            <span>After maturity</span>
+                                            <strong>Ownership</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dotted-back">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="locations" class="s-wrapper main-section pad-sides-70 pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container">
+                    <div class="section-title">
+                        <h2 class="title-text">Our Main Locations</h2>
+                        <p class="subtitle-text">You can choose your preferred location to plant your tree or the
+                            planting
+                            location will be chosen randomly</p>
+                    </div>
+                </div>
+                <div class="p-container">
+                    <div class="locations-cont">
+                        <div class="side-block-wr br-40">
+                            <div class="side-block pad-40">
+                                <div class="location-list">
+                                    <div id="locationNav" class="main-nav nav-sm">
+                                        <button class="p-btn btn-nav prev" aria-label="previous location"><span
+                                                class="ico ico-arrow-sm-left-filled"></span></button>
+                                        <button class="p-btn btn-nav next" aria-label="next location"><span
+                                                class="ico ico-arrow-sm-right-filled"></span></button>
+                                    </div>
+                                    <div class="c-location" data-lat="50.4501" data-lng="30.5234">
+                                        <strong class="location-title">Kyiv, <span>Ukraine</span></strong>
+                                        <span class="loc-description">Total area of ​​plantations - 43 hectares. The
+                                            number
+                                            of planted trees - over
+                                            640k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="48.8566" data-lng="2.3522">
+                                        <strong class="location-title">Paris, <span>France</span></strong>
+                                        <span class="loc-description">Total area of ​​plantations - 12 hectares. The
+                                            number
+                                            of planted trees - over
+                                            180k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="52.5200" data-lng="13.4050">
+                                        <strong class="location-title">Berlin, Germany</strong>
+                                        <span class="loc-description">Total area of ​​plantations - 8 hectares. The
+                                            number
+                                            of planted trees - over
+                                            120k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="41.9028" data-lng="12.4964">
+                                        <strong class="location-title">Rome, Italy</strong>
+                                        <span class="loc-description">Total area of ​​plantations - 15 hectares. The
+                                            number
+                                            of planted trees - over
+                                            210k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="51.5074" data-lng="-0.1278">
+                                        <strong class="location-title">London, United Kingdom</strong>
+                                        <span class="loc-description">Total area of ​​plantations - 10 hectares. The
+                                            number
+                                            of planted trees - over
+                                            150k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="40.4168" data-lng="-3.7038">
+                                        <strong class="location-title">Madrid, Spain</strong>
+                                        <span class="loc-description">Total area of ​​plantations - 7 hectares. The
+                                            number
+                                            of planted trees - over
+                                            100k</span>
+                                    </div>
+                                    <div class="c-location" data-lat="52.2297" data-lng="21.0122">
+                                        <strong class="location-title">Warsaw, <span>Poland</span></strong>
+                                        <span class="loc-description">Total area of ​​plantations - 9 hectares. The
+                                            number
+                                            of planted trees - over
+                                            130k</span>
+                                    </div>
+                                </div>
+                                <div class="location-photo-block">
+                                    <div class="sm-block-title">Location Photo</div>
+                                    <div class="location-photo-list slider-list gallery-list" data-lat="41.9028"
+                                        data-lng="12.4964">
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-9.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-8.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-1.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-3.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-4.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-2.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-7.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-6.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-5.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-10.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-11.png" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-12.png" alt="" class="gallery-img">
+                                        </a>
+                                    </div>
+                                    <div class="location-photo-list slider-list gallery-list" data-lat="50.4501"
+                                        data-lng="30.5234">
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-6.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-5.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-10.jpg" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-11.png" alt="" class="gallery-img">
+                                        </a>
+                                        <a class="gallery-item">
+                                            <img src="/static-files/img/image-12.png" alt="" class="gallery-img">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cs-map br-40">
+                            <svg width="0" height="0" style="position:absolute">
+                                <filter id="land-water-filter">
+                                    <feColorMatrix type="matrix" values="
+                1 0 0 0 0.11
+                0 1 0 0 0.15
+                0 0 1 0 0.07
+                0 0 0 1 0
+            " />
+                                </filter>
+                            </svg>
+                            <div id="map"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+        <section id="tree-advantages" class="s-wrapper gray-wrapper main-section pad-sides-70 pad-top-90 pad-bottom-90">
+            <div class="section-inner">
+                <div class="p-container">
+                    <div class="section-title">
+                        <h2 class="title-text">Why Paulownia?</h2>
+                        <p class="subtitle-text dark-gray">Curious what makes Paulownia so unique?<br>Here’s why more
+                            and
+                            more people are choosing this remarkable tree</p>
+                    </div>
+                </div>
+                <div class="p-container">
+                    <div class="tree-adva-cont">
+                        <div class="tree-adva-list">
+                            <div class="adva-side adva-left" style="order: 2;">
+                                <div class="a-item it-top">
+                                    <div class="a-title">Fastest Growing</div>
+                                    <div class="a-info">
+                                        <span class="ico ico-arrow-chart"></span>
+                                        <div class="a-description">3 m/year</div>
+                                    </div>
+                                    <div class="pointer">
+                                        <span class="p-line"></span>
+                                        <span class="p-circle"></span>
+                                    </div>
+                                </div>
+                                <div class="a-item it-bottom">
+                                    <div class="a-title">Absorbing CO₂</div>
+                                    <div class="a-info">
+                                        <span class="ico ico-lightning"></span>
+                                        <div class="a-description">x10 speed</div>
+                                    </div>
+                                    <div class="pointer">
+                                        <span class="p-line"></span>
+                                        <span class="p-circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adva-side adva-center" style="order: 1;">
+                                <div class="a-item it-top">
+                                    <div class="a-title"></div>
+                                    <div class="a-info">
+                                        <span class="ico ico-drop"></span>
+                                        <div class="a-description">Low-maintenance</div>
+                                    </div>
+                                    <div class="pointer">
+                                        <span class="p-line"></span>
+                                        <span class="p-circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="adva-side adva-right" style="order: 3;">
+                                <div class="a-item it-top">
+                                    <div class="a-title">Valuable Timber</div>
+                                    <div class="a-info">
+                                        <span class="ico ico-price-tag"></span>
+                                        <div class="a-description">200 €/unit</div>
+                                    </div>
+                                    <div class="pointer">
+                                        <span class="p-line"></span>
+                                        <span class="p-circle"></span>
+                                    </div>
+                                </div>
+                                <div class="a-item it-bottom">
+                                    <div class="a-title">Ecology</div>
+                                    <div class="a-info">
+                                        <span class="ico ico-leaf"></span>
+                                        <div class="a-description">Eco-friendly</div>
+                                    </div>
+                                    <div class="pointer">
+                                        <span class="p-line"></span>
+                                        <span class="p-circle"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tree-image">
+                            <img src="/static-files/img/paulownia-tree.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="founder" class="s-wrapper gradient-wrapper main-section pad-sides-70 pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container max-width-1200">
+                    <div class="founder-cont">
+                        <div class="left-side">
+                            <img src="/static-files/img/founder.png" alt="">
+                        </div>
+                        <div class="right-side">
+                            <div class="section-title align-left gap-30">
+                                <h2 class="title-text align-left"><strong>Hi!</strong> I’m Vadym Kudryk,
+                                    founder of <strong>petree</strong> </h2>
+                                <p class="subtitle-text align-left">We’ve been growing paulownia trees in Europe for
+                                    over 5 years. Now,
+                                    we're combining our experience with a focus on ecology and a tokenized economy. Join
+                                    us
+                                    today to earn additional income while making a positive impact on the environment
+                                </p>
+                            </div>
+                            <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted">
+                                <span class="btn-inner"><span class="ico ico-token-stroke"></span>Buy token</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+        <section id="company-advantages" class="s-wrapper dark-green-wrapper main-section pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container stretch logo-line">
+                    <div class="section-title">
+                        <p class="subtitle-text green">
+                            Trusted by hundreds of companies across 20+ countries
+                        </p>
+                    </div>
+                    <div class="logo-list">
+                        <div class="scroll-wrapper">
+                            <div class="scroll-row row-small">
+                                <img src="/static-files/img/logo-07.png" alt="">
+                                <img src="/static-files/img/logo-06.png" alt="">
+                                <img src="/static-files/img/logo-05.png" alt="">
+                                <img src="/static-files/img/logo-04.png" alt="">
+                                <img src="/static-files/img/logo-03.png" alt="">
+                                <img src="/static-files/img/logo-02.png" alt="">
+                                <img src="/static-files/img/logo-01.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-container pad-sides-70">
+                    <div class="section-title">
+                        <h2 class="title-text light">
+                            Advantages of <strong>Investments</strong></h2>
+                        <p class="subtitle-text light">Discover the key benefits of investing in eco-friendly NFT assets
+                            backed by real paulownia trees and contributing to a greener future</p>
+                    </div>
+                </div>
+                <div class="p-container pad-sides-70">
+                    <div class="c-adva-cont">
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-money-bag"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">Annual Income</h4>
+                                    <span class="item-description">Stable yearly earnings from the natural growth and
+                                        harvest of paulownia trees
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-leaf"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">Carbon Credits</h4>
+                                    <span class="item-description">Receive certified carbon offset credits by
+                                        contributing to CO₂ absorption through tree planting
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-tree"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">Tangible Value</h4>
+                                    <span class="item-description">Each NFT is linked to a real-world asset — a
+                                        physical, fast-growing paulownia tree
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-qr-code"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">NFT Pass</h4>
+                                    <span class="item-description">A digital token that serves as proof of ownership and
+                                        grants access to exclusive benefits
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-analysis"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">Transparent Reporting</h4>
+                                    <span class="item-description">Regular updates and fully trackable data on your
+                                        investment and tree status
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                        <div class="c-adva-item blur br-40">
+                            <div class="item-inner pad-40">
+                                <span class="ico ico-globe"></span>
+                                <div class="item-text">
+                                    <h4 class="item-title">Eco Impact</h4>
+                                    <span class="item-description">Support reforestation and biodiversity by investing
+                                        in sustainable, planet-friendly assets
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dotted-back green"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <section id="gallery" class="s-wrapper main-section pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container">
+                    <div class="section-title">
+                        <h2 class="title-text">Photo Gallery</h2>
+                        <p class="subtitle-text"></p>
+                    </div>
+                </div>
+                <div class="p-container stretch">
+                    <div class="gallery-cont gallery-list">
+                        <div id="gallery-all" class="gallery-container">
+                            <div class="scroll-wrapper">
+                                <div class="scroll-row">
+                                    <a class="gallery-item"><img src="/static-files/img/image-1.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-2.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-3.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-4.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-5.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-6.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-7.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-8.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-9.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-10.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-11.png" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-12.png" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-13.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-14.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-15.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-16.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-17.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-18.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-19.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                    <a class="gallery-item"><img src="/static-files/img/image-20.jpg" alt=""
+                                            class="gallery-img" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section id="contact-form" class="s-wrapper main-section pad-sides-70 pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container max-width-1200">
+                    <div class="contact-cont">
+                        <div class="left-side">
+                            <div class="section-title align-left gap-30">
+                                <span class="ico ico-shield-filled"></span>
+                                <h2 class="title-text align-left"><strong>Sign Up</strong> Now
+                                    And Secure Your Future </h2>
+                                <p class="subtitle-text align-left">Join our sustainable investment platform today and
+                                    take the first step toward long-term income, environmental impact, and digital asset
+                                    ownership
+                                </p>
+                            </div>
+                        </div>
+                        <div class="right-side">
+                            <div class="form-wr">
+                                <form id="send-message" class="cs-contact-form main-green pad-50 br-40">
+                                    <div class="f-col gap-30">
+                                        <div class="f-row">
+                                            <div class="c-form required">
+                                                <input class="form-in f-lg dark-back" type="text" required=""
+                                                    placeholder="Your name" autocomplete="off" value="">
+                                                <span class="mark">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="f-row">
+                                            <div class="c-form required">
+                                                <input class="form-in f-lg dark-back" id="email" type="email"
+                                                    required="" placeholder="Your e-mail" autocomplete="off" value=""
+                                                    name="email">
+                                                <span class="mark">*</span>
+                                            </div>
+                                        </div>
+                                        <div class="c-form required">
+                                            <div class="cs-dropdown" data-value="">
+                                                <button class="cs-drop-toggle cs-select f-lg dark-back stretch">Choose
+                                                    country</button>
+                                                <div class="cs-dropdown-list cs-select-list stretch">
+                                                    <div class="drop-list-wrapper">
+                                                        <a href="#" class="drop-link sel-item" data-value="ua">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/ukarainian.jpg" alt="">
+                                                                <span>Ukraine</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="pl">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/polski.png" alt="">
+                                                                <span>Poland</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="fr">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/francais.png" alt="">
+                                                                <span>France</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="ua">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/ukarainian.jpg" alt="">
+                                                                <span>Ukraine</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="pl">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/polski.png" alt="">
+                                                                <span>Poland</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="fr">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/francais.png" alt="">
+                                                                <span>France</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="ua">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/ukarainian.jpg" alt="">
+                                                                <span>Ukraine</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="pl">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/polski.png" alt="">
+                                                                <span>Poland</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="fr">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/francais.png" alt="">
+                                                                <span>France</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="ua">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/ukarainian.jpg" alt="">
+                                                                <span>Ukraine</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="pl">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/polski.png" alt="">
+                                                                <span>Poland</span>
+                                                            </div>
+                                                        </a>
+                                                        <a href="#" class="drop-link sel-item" data-value="fr">
+                                                            <div class="country-item"><img
+                                                                    src="/static-files/img/francais.png" alt="">
+                                                                <span>France</span>
+                                                            </div>
+                                                        </a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="f-row">
+                                            <div class="c-form align-right">
+                                                <button
+                                                    class="p-btn btn-solid btn-dark-green btn-lg fit-cont btn-dotted"
+                                                    type="submit">
+                                                    <span class="btn-inner">Start investing</span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <footer id="main-footer" class="s-wrapper dark-green-wrapper main-section pad-sides-70 pad-top-90">
+            <div class="section-inner">
+                <div class="p-container">
+                    <div class="footer-cont">
+                        <div class="fs-cols">
+                            <div class="fs-col fs-col-1">
+                                <div class="col-cont">
+                                    <div class="side-block">
+                                        <a href="#" class="f-logo">
+                                            <img src="/static-files/img/logo-light.svg" alt="">
+                                        </a>
+                                        <span class="f-cta">
+                                            Join the movement where profit meets planet, and every tree counts
+                                        </span>
+                                        <div class="f-social">
+                                            <a id="facebook" href="#" class="soc-link">
+                                                <span class="ico ico-facebook"></span>
+                                            </a>
+                                            <a id="instagram" href="" class="soc-link"><span
+                                                    class="ico ico-instagram"></span></a>
+                                            <a id="x-twitter" href="" class="soc-link"><span
+                                                    class="ico ico-x-twitter"></span></a>
+                                            <a id="youtube" href="" class="soc-link"><span
+                                                    class="ico ico-youtube"></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fs-col fs-col-2">
+                                <h6 class="col-title">Services</h6>
+                                <div class="col-cont">
+                                    <div class="main-links">
+                                        <a href="#" class="f-link">Business Solutions</a>
+                                        <a href="#" class="f-link">Investment Planning</a>
+                                        <a href="#" class="f-link">Marketing Solutions</a>
+                                        <a href="#" class="f-link">Banking & Insurance</a>
+                                        <a href="#" class="f-link">Planning & Research</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fs-col fs-col-3">
+                                <h6 class="col-title">Support</h6>
+                                <div class="col-cont">
+                                    <div class="main-links">
+                                        <a href="#" class="f-link">Business Solutions</a>
+                                        <a href="#" class="f-link">Investment Planning</a>
+                                        <a href="#" class="f-link">Marketing Solutions</a>
+                                        <a href="#" class="f-link">Banking & Insurance</a>
+                                        <a href="#" class="f-link">Planning & Research</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fs-col fs-col-4">
+                                <h6 class="col-title">Subscribe Newsletter</h6>
+                                <div class="col-cont">
+                                    <div class="subscribe-form">
+                                        <span class="descr-text">Subscribe our newsletter to get more updates</span>
+                                        <form id="subscription" class="sub-form">
+                                            <div class="c-form required">
+                                                <input type="email" name="email" required
+                                                    class="form-in f-lg f-stroke dark-back" placeholder="Email address">
+                                                <button class="p-btn btn-solid btn-green btn-md fit-cont" type="submit">
+                                                    <span class="btn-inner">Підписатись</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="f-bottom">
+                            <div class="copyright">© <span id="c-date">2025</span> Petree - All rights reserved</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dotted-back green"></div>
+        </footer>
+
+
+
+    </main>
+
+
+    <div id="m-registration" class="modal-wrapper">
+        <div class="modal-container">
+            <div class="c-modal m-lg mob-hug o-visible no-header no-footer">
+                <div class="mod-header">
+                    <div class="left">
+                        <span class="ico ico-arrow-left-medium btn-nav btn-back" style="display: none;"></span>
+                        <h3 class="modal-title"></h3>
+                    </div>
+                    <button class="p-btn btn-link close-btn" type="button">
+                        <span class="ico ico-close"></span>
+                    </button>
+                </div>
+                <div class="mod-cont o-visible">
+                    <div class="mod-box">
+                        <div class="contact-cont" style="min-height: auto;">
+                            <div class="left-side">
+                                <div class="section-title align-left gap-20">
+                                    <span class="ico ico-shield-filled" style="font-size: 30px; height: 60px; width: 60px;"></span>
+                                    <h3 class="title-text align-left"><strong>Sign Up</strong>
+                                        And Secure Your Future </h3>
+                                    <p class="subtitle-text align-left" style="font-size: 20px;">Join our sustainable
+                                        investment platform today
+                                        and
+                                        take the first step toward long-term income, environmental impact, and digital
+                                        asset
+                                        ownership
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="right-side">
+                                <div class="form-wr">
+                                    <form id="send-message" class="cs-contact-form main-green pad-50 br-40"
+                                        style="min-width: 420px;">
+                                        <div class="f-col gap-30">
+                                            <div class="f-row">
+                                                <div class="c-form required">
+                                                    <input class="form-in f-md dark-back" type="text" required=""
+                                                        placeholder="Your name" autocomplete="off" value="">
+                                                    <span class="mark">*</span>
+                                                </div>
+                                            </div>
+                                            <div class="f-row">
+                                                <div class="c-form required">
+                                                    <input class="form-in f-md dark-back" id="email" type="email"
+                                                        required="" placeholder="Your e-mail" autocomplete="off"
+                                                        value="" name="email">
+                                                    <span class="mark">*</span>
+                                                </div>
+                                            </div>
+                                            <div class="c-form required">
+                                                <div class="cs-dropdown" data-value="">
+                                                    <button
+                                                        class="cs-drop-toggle cs-select f-md dark-back stretch">Choose
+                                                        country</button>
+                                                    <div class="cs-dropdown-list cs-select-list stretch">
+                                                        <div class="drop-list-wrapper">
+                                                            <a href="#" class="drop-link sel-item" data-value="ua">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/ukarainian.jpg" alt="">
+                                                                    <span>Ukraine</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="pl">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/polski.png" alt="">
+                                                                    <span>Poland</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="fr">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/francais.png" alt="">
+                                                                    <span>France</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="ua">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/ukarainian.jpg" alt="">
+                                                                    <span>Ukraine</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="pl">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/polski.png" alt="">
+                                                                    <span>Poland</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="fr">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/francais.png" alt="">
+                                                                    <span>France</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="ua">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/ukarainian.jpg" alt="">
+                                                                    <span>Ukraine</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="pl">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/polski.png" alt="">
+                                                                    <span>Poland</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="fr">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/francais.png" alt="">
+                                                                    <span>France</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="ua">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/ukarainian.jpg" alt="">
+                                                                    <span>Ukraine</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="pl">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/polski.png" alt="">
+                                                                    <span>Poland</span>
+                                                                </div>
+                                                            </a>
+                                                            <a href="#" class="drop-link sel-item" data-value="fr">
+                                                                <div class="country-item"><img
+                                                                        src="/static-files/img/francais.png" alt="">
+                                                                    <span>France</span>
+                                                                </div>
+                                                            </a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="f-row">
+                                                <div class="c-form align-right">
+                                                    <button
+                                                        class="p-btn btn-solid btn-dark-green btn-md fit-cont btn-dotted stretch"
+                                                        type="submit">
+                                                        <span class="btn-inner">Start investing</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="m-video-box" class="modal-wrapper">
+        <div class="modal-container">
+            <div class="c-modal m-lg mob-hug mod-media mod-video">
+                <div class="mod-header">
+                    <div class="left">
+                    </div>
+                    <span class="ico ico-close close-btn light"></span>
+                </div>
+                <div class="mod-cont">
+                    <div class="mod-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main-script.js"></script>
+</body>
+
+</html>

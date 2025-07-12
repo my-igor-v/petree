@@ -1,0 +1,131 @@
+@font-face {
+  font-family: 'Icomoon-petree';
+  src:
+    url('Icomoon-petree.ttf?wb792u') format('truetype'),
+    url('Icomoon-petree.woff?wb792u') format('woff'),
+    url('Icomoon-petree.svg?wb792u#Icomoon-petree') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.ico {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Icomoon-petree' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-search:before {
+  content: "\e922";
+}
+.ico-tree:before {
+  content: "\e919";
+}
+.ico-arrow-sm-left-filled:before {
+  content: "\e900";
+}
+.ico-arrow-sm-right-filled:before {
+  content: "\e901";
+}
+.ico-arrow-sm-up-filled:before {
+  content: "\e902";
+}
+.ico-check:before {
+  content: "\e903";
+}
+.ico-close:before {
+  content: "\e904";
+}
+.ico-crown:before {
+  content: "\e905";
+}
+.ico-drop:before {
+  content: "\e906";
+}
+.ico-eco:before {
+  content: "\e907";
+}
+.ico-euro:before {
+  content: "\e908";
+}
+.ico-facebook:before {
+  content: "\e909";
+}
+.ico-globe:before {
+  content: "\e90a";
+}
+.ico-info:before {
+  content: "\e90b";
+}
+.ico-instagram:before {
+  content: "\e90c";
+}
+.ico-leaf:before {
+  content: "\e90d";
+}
+.ico-leaf-filled:before {
+  content: "\e90e";
+}
+.ico-lightning:before {
+  content: "\e90f";
+}
+.ico-location:before {
+  content: "\e910";
+}
+.ico-location-solid:before {
+  content: "\e911";
+}
+.ico-money-bag:before {
+  content: "\e912";
+}
+.ico-price-tag:before {
+  content: "\e913";
+}
+.ico-price-tag-filled:before {
+  content: "\e914";
+}
+.ico-qr-code:before {
+  content: "\e915";
+}
+.ico-shield-filled:before {
+  content: "\e916";
+}
+.ico-token-filled:before {
+  content: "\e917";
+}
+.ico-token-stroke:before {
+  content: "\e918";
+}
+.ico-tree-filled:before {
+  content: "\e91a";
+}
+.ico-user:before {
+  content: "\e91b";
+}
+.ico-x-twitter:before {
+  content: "\e91c";
+}
+.ico-youtube:before {
+  content: "\e91d";
+}
+.ico-air:before {
+  content: "\e91e";
+}
+.ico-analysis:before {
+  content: "\e91f";
+}
+.ico-arrow-chart:before {
+  content: "\e920";
+}
+.ico-arrow-sm-down-filled:before {
+  content: "\e921";
+}

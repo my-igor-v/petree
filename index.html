@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>petree</title>
+  </head>
+  <body>
+    <div class="cs-box">
+    <div class="cs-container">
+      <div class="main">
+      <ul class="links">
+        <li class="main-wr"><a href="petree_main.html" class="s-link" target="_blank">Petree - Main Page</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </div>
+    </div>
+    <style>
+      body{
+        font-family: Source Code Pro;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    min-height: 100vh;
+    background: #171a27;
+    color: white;
+    overflow-x: hidden;
+      }
+      .cs-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+      }
+      .cs-container{
+        display: flex;
+        max-width: 992px;
+        width: 100%;
+        flex-direction: column;
+      }
+      .main{
+        display: flex;
+        flex-direction: column;
+      }
+      ul{
+        padding: 0 !important;
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .links{
+        gap: 15px;
+      }
+      .links li{
+        list-style: none;
+      }
+      .links li a{
+        font-size: 25px;
+        color: #4949ff;
+        text-decoration: none;
+        width: fit-content;
+      }
+      .links li a:hover{
+        text-decoration: underline;
+      }
+      .main-wr{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 30px;
+        background: #11131c;
+        border-radius: 20px;
+      }
+    </style>
+
+
+
+
+
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAOGiUE_DKqIS8fqMbf_cr7IPWO-unzHD8",
+      authDomain: "petree-21c48.firebaseapp.com",
+      projectId: "petree-21c48",
+      storageBucket: "petree-21c48.firebasestorage.app",
+      messagingSenderId: "243291604163",
+      appId: "1:243291604163:web:27f0175d94811d27eece76",
+      measurementId: "G-MF1RL0TGBB"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>

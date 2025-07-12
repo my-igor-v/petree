@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Gallery</title>
+
+</head>
+
+<body>
+    <section id="gallery" class="s-wrapper main-section pad-top-90 pad-bottom-210">
+        <div class="section-inner">
+            <div class="p-container">
+                <div class="section-title">
+                    <h2 class="title-text">Photo Gallery</h2>
+                    <p class="subtitle-text"></p>
+                </div>
+            </div>
+            <div class="p-container stretch">
+                <div class="gallery-cont gallery-list">
+                    <div class="gallery-container" id="gallery-all">
+                        <div class="scroll-wrapper">
+                            <div class="scroll-row">
+                                <a class="gallery-item"><img src="/static-files/img/image-1.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-2.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-3.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-4.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-5.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-6.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-7.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-8.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-9.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-10.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-11.png" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-12.png" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-13.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-14.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-15.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-16.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-17.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-18.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-19.jpg" alt=""
+                                        class="gallery-img" /></a>
+                                <a class="gallery-item"><img src="/static-files/img/image-20.jpg" alt=""
+                                        class="gallery-img" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <style>
+        .gallery-cont {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .gallery-container {
+            overflow: hidden;
+            position: relative;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .scroll-wrapper {
+            display: inline-flex;
+            white-space: nowrap;
+        }
+
+        .scroll-row {
+            display: inline-flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .scroll-row img {
+            width: auto;
+            height: 220px;
+            border-radius: 20px;
+            margin: 0 10px;
+            transition: 0.3s ease-out;
+        }
+    </style>
+
+    <script>
+        // --- Додаємо розбиття на два блоки по половині зображень ---
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryCont = document.querySelector('.gallery-cont');
+            const allContainer = document.getElementById('gallery-all');
+            const allImages = Array.from(allContainer.querySelectorAll('.gallery-item'));
+            const half = Math.ceil(allImages.length / 2);
+
+            // Створюємо перший контейнер
+            const container1 = document.createElement('div');
+            container1.className = 'gallery-container';
+            container1.id = 'gallery1';
+            const wrapper1 = document.createElement('div');
+            wrapper1.className = 'scroll-wrapper';
+            const row1 = document.createElement('div');
+            row1.className = 'scroll-row';
+            allImages.slice(0, half).forEach(img => row1.appendChild(img.cloneNode(true)));
+            wrapper1.appendChild(row1);
+            container1.appendChild(wrapper1);
+
+            // Створюємо другий контейнер (reverse)
+            const container2 = document.createElement('div');
+            container2.className = 'gallery-container reverse';
+            container2.id = 'gallery2';
+            const wrapper2 = document.createElement('div');
+            wrapper2.className = 'scroll-wrapper';
+            const row2 = document.createElement('div');
+            row2.className = 'scroll-row';
+            allImages.slice(half).forEach(img => row2.appendChild(img.cloneNode(true)));
+            wrapper2.appendChild(row2);
+            container2.appendChild(wrapper2);
+
+            // Очищаємо старий контейнер і додаємо нові
+            galleryCont.innerHTML = '';
+            galleryCont.appendChild(container1);
+            galleryCont.appendChild(container2);
+
+            // Далі ініціалізуємо скролінг як і раніше
+            // Масив для керування станом анімації обох галерей
+            const running = [true, true];
+
+            function setupInfiniteScroll(gallerySelector, direction = 1, speed = 1, idx = 0) {
+                const gallery = document.querySelector(gallerySelector);
+                const wrapper = gallery.querySelector('.scroll-wrapper');
+                const row = wrapper.querySelector('.scroll-row');
+                // Клонуємо ряд для безшовності
+                const clone = row.cloneNode(true);
+                wrapper.appendChild(clone);
+
+                let rowWidth = row.offsetWidth;
+                let scroll = 0;
+
+                function animate() {
+                    if (running[idx]) {
+                        if (direction === 1) {
+                            scroll += speed;
+                            if (scroll >= rowWidth) scroll -= rowWidth;
+                        } else {
+                            scroll -= speed;
+                            if (scroll < 0) scroll += rowWidth;
+                        }
+                        wrapper.style.transform = `translateX(${-scroll}px)`;
+                    }
+                    requestAnimationFrame(animate);
+                }
+                animate();
+
+                // Оновити ширину при ресайзі
+                window.addEventListener('resize', () => {
+                    rowWidth = row.offsetWidth;
+                });
+            }
+
+            setupInfiniteScroll('#gallery1', 1, 1, 0); // ліворуч
+            setupInfiniteScroll('#gallery2', -1, 1, 1); // праворуч
+
+            // Додаємо події наведення на обидва рядки
+            const containers = document.querySelectorAll('.gallery-container');
+            containers.forEach(container => {
+                container.addEventListener('mouseenter', () => {
+                    running[0] = false;
+                    running[1] = false;
+                });
+                container.addEventListener('mouseleave', () => {
+                    running[0] = true;
+                    running[1] = true;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
