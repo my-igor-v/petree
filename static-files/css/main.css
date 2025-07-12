@@ -1579,7 +1579,7 @@ input.form-in.search {
 }
 
 .p-btn.btn-dark-green.btn-dotted::before {
-    background-image: url(static-files/img/circle-pattern-green-opacity-80.svg);
+    background-image: url(/static-files/img/circle-pattern-green-opacity-80.svg);
     /*mask-image: 
   linear-gradient(to right,  transparent, black 60px),
   linear-gradient(to left,   transparent, black 60px);*/
@@ -1926,7 +1926,7 @@ input.form-in.search {
 #hero {
     padding-top: 140px !important;
     padding-bottom: 140px !important;
-    background-image: url(static-files/img/image-10.jpg);
+    background-image: url(/static-files/img/image-10.jpg);
     background-position: center right;
     background-size: cover;
     background-repeat: no-repeat;
@@ -1987,7 +1987,7 @@ input.form-in.search {
     align-self: stretch;
     border: 1px solid #87A57A;
     background: var(--olive-green);
-    background-image: url(static-files/img/dotted-corner-bottom_white.svg);
+    background-image: url(/static-files/img/dotted-corner-bottom_white.svg);
     background-position: bottom right;
     background-repeat: no-repeat;
 }
@@ -2050,7 +2050,7 @@ input.form-in.search {
     align-items: flex-start;
     background: var(--white);
     align-self: stretch;
-    background-image: url(static-files/img/dotted-corner-bottom_green.svg);
+    background-image: url(/static-files/img/dotted-corner-bottom_green.svg);
     background-position: bottom right;
     background-repeat: no-repeat;
 }
@@ -2210,15 +2210,15 @@ input.form-in.search {
 }
 
 .dark-green .dotted-back {
-    background-image: url(static-files/img/circle-pattern-green-opacity-40.svg);
+    background-image: url(/static-files/img/circle-pattern-green-opacity-40.svg);
 }
 
 .blur .dotted-back {
-    background-image: url(static-files/img/circle-pattern-white-opacity-20.svg);
+    background-image: url(/static-files/img/circle-pattern-white-opacity-20.svg);
 }
 
 .main-green .dotted-back {
-    background-image: url(static-files/img/circle-pattern-white-opacity-40.svg);
+    background-image: url(/static-files/img/circle-pattern-white-opacity-40.svg);
     mask-image:
         linear-gradient(to top, transparent, black 80px),
         linear-gradient(to right, transparent, black 80px),
@@ -2227,7 +2227,7 @@ input.form-in.search {
 }
 
 .dotted-back.green {
-    background-image: url(static-files/img/circle-pattern-green-opacity-40.svg);
+    background-image: url(/static-files/img/circle-pattern-green-opacity-40.svg);
     mask-image:
         linear-gradient(to top, transparent, black 80px),
         linear-gradient(to right, transparent, black 80px),
@@ -3110,7 +3110,7 @@ input.form-in.search {
     max-width: 1200px;
     width: 100%;
     aspect-ratio: 1/1;
-    background-image: url(static-files/img/circle-pattern-white-opacity-100-2.svg);
+    background-image: url(/static-files/img/circle-pattern-white-opacity-100-2.svg);
     mask-image: radial-gradient(circle, black 5%, transparent 70%);
     -webkit-mask-size: cover;
     mask-size: 100% 100%;
