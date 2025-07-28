@@ -9,6 +9,7 @@
   font-display: block;
 }
 
+
 .ico {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'Icomoon-petree' !important;
@@ -24,6 +25,81 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.ico-eye-closed:before {
+  content: "\e935";
+}
+.ico-fb-messanger:before {
+  content: "\e936";
+}
+.ico-pause-solid:before {
+  content: "\e937";
+}
+.ico-play-solid:before {
+  content: "\e938";
+}
+.ico-telegram:before {
+  content: "\e939";
+}
+.ico-viber:before {
+  content: "\e93a";
+}
+.ico-whatsapp:before {
+  content: "\e93b";
+}
+.ico-arrow-up-left-long:before {
+  content: "\e923";
+}
+.ico-arrow-up-right-long:before {
+  content: "\e924";
+}
+.ico-bell:before {
+  content: "\e925";
+}
+.ico-eye-closed1:before {
+  content: "\e926";
+}
+.ico-eye:before {
+  content: "\e927";
+}
+.ico-magnifer:before {
+  content: "\e928";
+}
+.ico-settings:before {
+  content: "\e929";
+}
+.ico-settings-minimalistic:before {
+  content: "\e92a";
+}
+.ico-widget-2:before {
+  content: "\e92b";
+}
+.ico-widget:before {
+  content: "\e92c";
+}
+.ico-alt-arrow-down:before {
+  content: "\e92d";
+}
+.ico-alt-arrow-left:before {
+  content: "\e92e";
+}
+.ico-alt-arrow-right:before {
+  content: "\e92f";
+}
+.ico-alt-arrow-up:before {
+  content: "\e930";
+}
+.ico-arrow-down-left-long:before {
+  content: "\e931";
+}
+.ico-arrow-down-long:before {
+  content: "\e932";
+}
+.ico-arrow-down-long-1:before {
+  content: "\e933";
+}
+.ico-arrow-down-right-long:before {
+  content: "\e934";
+}
 .ico-search:before {
   content: "\e922";
 }

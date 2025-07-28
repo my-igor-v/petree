@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //   header.classList.remove('fixed');
     //   return;
     // }
-
+    if (!header) return; // <--- Додаємо цю перевірку
     const currentScroll = window.pageYOffset;
 
     if (currentScroll < lastScroll && currentScroll > 20) {
@@ -49,84 +49,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // --- Dropdown  ---
-  
-function openDropdown(list, dropdown) {
-    if (window.innerWidth <= 768) {
-        list.classList.add('mobile');
-        createOverlay();
-        list.classList.add('opened');
-        // Без затримки transform не застосується
-        requestAnimationFrame(() => {
-            list.classList.add('animate');
-        });
-    } else {
-        adjustPosition(list, dropdown);
-        list.classList.add('opened');
-        const toggle = dropdown.querySelector('.cs-drop-toggle');
-        toggle?.classList.add('active');
-        setTimeout(() => list.classList.add('animate'), 10);
-    }
-    if (window.innerWidth <= 768) {
-  list.classList.add('mobile');
-  createOverlay();
-} else {
-  list.classList.remove('mobile');
-}
+  // --- Dropdown  --- //
+
+  function openDropdown(list, dropdown) {
+    adjustPosition(list, dropdown);
+    list.classList.add('opened');
+    const toggle = dropdown.querySelector('.cs-drop-toggle');
+    toggle?.classList.add('active');
+    setTimeout(() => list.classList.add('animate'), 10);
+    list.classList.remove('mobile');
   }
 
-function closeDropdown(list) {
+  function closeDropdown(list) {
     list.classList.remove('animate');
     const handler = function () {
-        list.classList.remove('opened');
-        list.removeEventListener('transitionend', handler);
-        const dropdown = list.closest('.cs-dropdown');
-        const toggle = dropdown?.querySelector('.cs-drop-toggle');
-        toggle?.classList.remove('active');
-
-        if (window.innerWidth <= 768) {
-            removeOverlay();
-        }
+      list.classList.remove('opened');
+      list.removeEventListener('transitionend', handler);
+      const dropdown = list.closest('.cs-dropdown');
+      const toggle = dropdown?.querySelector('.cs-drop-toggle');
+      toggle?.classList.remove('active');
     };
     list.addEventListener('transitionend', handler);
   }
-
-function createOverlay() {
-    let overlay = document.querySelector('.cs-dropdown-overlay');
-    if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'cs-dropdown-overlay';
-        document.body.appendChild(overlay);
-    }
-    overlay.style.display = 'block';
-    requestAnimationFrame(() => overlay.classList.add('visible'));
-
-    overlay.onclick = () => {
-        closeAll(); // закриває дропдаун і оверлей
-    };
-
-    document.body.style.overflow = 'hidden';
-}
-
-
-function removeOverlay() {
-    const overlay = document.querySelector('.cs-dropdown-overlay');
-    if (overlay) {
-        overlay.classList.remove('visible');
-        overlay.addEventListener('transitionend', () => {
-            overlay.style.display = 'none';
-        }, { once: true });
-    }
-    document.body.style.overflow = '';
-}
-
 
 
   const closeAll = () => {
     document.querySelectorAll('.cs-dropdown-list.opened').forEach(list => {
       closeDropdown(list);
       list.classList.remove('measuring');
-      removeOverlay();
     });
   };
 
@@ -170,9 +120,9 @@ function removeOverlay() {
       list.style.bottom = 'auto';
     }
 
-
     list.classList.remove('measuring');
-  };
+  }
+
 
 
   function highlightTextInElement(element, query) {
@@ -238,13 +188,13 @@ function removeOverlay() {
     const allOptions = Array.from(list.querySelectorAll('.drop-link'));
 
     allOptions.forEach(option => {
-  if (!option.dataset.originalHtml) {
-    option.dataset.originalHtml = option.innerHTML.trim();
-  }
-  if (!option.dataset.originalText) {
-    option.dataset.originalText = option.textContent.trim().toLowerCase();
-  }
-});
+      if (!option.dataset.originalHtml) {
+        option.dataset.originalHtml = option.innerHTML.trim();
+      }
+      if (!option.dataset.originalText) {
+        option.dataset.originalText = option.textContent.trim().toLowerCase();
+      }
+    });
 
 
     if (allOptions.length > 10 && !list.querySelector('.c-search')) {
@@ -385,36 +335,38 @@ function removeOverlay() {
   // ======== MODALS ========
   // === Функції відкриття/закриття модалів ===
   // === Відкриття модалок по data-target ===
+
   function openModal(modal) {
     if (!modal) return;
     modal.classList.add('opened');
-    document.body.classList.add('modal-open'); // щоб заблокувати скрол
-}
+    document.body.classList.add('static'); // щоб заблокувати скрол
+  }
 
-function closeModal(modal) {
+
+  function closeModal(modal) {
     if (!modal) return;
     modal.classList.remove('opened');
-    document.body.classList.remove('modal-open');
-}
+    document.body.classList.remove('static');
+  }
 
-document.querySelectorAll('[data-target]').forEach(trigger => {
+  document.querySelectorAll('[data-target]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
+      e.preventDefault();
+      e.stopPropagation();
 
-        const targetSelector = trigger.getAttribute('data-target');
-        const targetModal = document.querySelector(targetSelector);
+      const targetSelector = trigger.getAttribute('data-target');
+      const targetModal = document.querySelector(targetSelector);
 
-        // Закрити іншу модалку, якщо вказано data-close-target
-        const closeTargetSelector = trigger.getAttribute('data-close-target');
-        if (closeTargetSelector) {
-            const closeModalElement = document.querySelector(closeTargetSelector);
-            if (closeModalElement) closeModal(closeModalElement);
-        }
+      // Закрити іншу модалку, якщо вказано data-close-target
+      const closeTargetSelector = trigger.getAttribute('data-close-target');
+      if (closeTargetSelector) {
+        const closeModalElement = document.querySelector(closeTargetSelector);
+        if (closeModalElement) closeModal(closeModalElement);
+      }
 
-        openModal(targetModal);
+      openModal(targetModal);
     });
-});
+  });
 
 
 
@@ -517,11 +469,19 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
     modal.classList.add('opened');
-    document.body.classList.add('modal-open');
+    document.body.classList.add('static');
     console.log('Модалка відкрита:', modal.id);
   }
 
   // Обробка кліків по .a-video
+  document.querySelectorAll('.a-video.a-hover').forEach(link => {
+    if (!link.querySelector('.ico-play-solid')) {
+      const playIcon = document.createElement('span');
+      playIcon.className = 'ico ico-play-solid';
+      link.appendChild(playIcon);
+    }
+  });
+
   document.querySelectorAll('.a-video:not(.cloned)').forEach(link => {
     console.log('Ініціалізація посилання:', link.getAttribute('href'));
     const videoUrl = link.getAttribute('href');
@@ -682,7 +642,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Закриття модалки
   function closeVideoModal() {
     modal.classList.remove('opened');
-    document.body.classList.remove('modal-open');
+    document.body.classList.remove('static');
     videoContainer.innerHTML = '';
     const nav = modal.querySelector('.modal-media-nav');
     if (nav) nav.remove();
@@ -731,7 +691,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const drawW = Math.round(w * ratio), drawH = Math.round(h * ratio);
         const canvas = document.createElement('canvas');
         canvas.width = drawW; canvas.height = drawH;
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
         ctx.drawImage(img, 0, 0, drawW, drawH);
         imgEl.dataset.originalSrc = imgEl.src;
         imgEl.src = canvas.toDataURL('image/jpeg', 0.8);
@@ -803,6 +763,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // --- Map code початок ---
+
   const mapFilterClass = 'map-color-filter';
   const map = L.map('map', {
     center: [48, 15], zoom: 4, minZoom: 2, maxZoom: 18, worldCopyJump: false,
@@ -1106,8 +1067,8 @@ document.addEventListener('DOMContentLoaded', function () {
             <div class="swiper gallery-swiper">
               <div class="swiper-wrapper"></div>
               <div class="cs-swiper-nav">
-                <div class="p-btn btn-nav prev swiper-button-prev"><span class="ico ico-arrow-sm-left-filled"></span></div>
-                <div class="p-btn btn-nav next swiper-button-next"><span class="ico ico-arrow-sm-right-filled"></span></div>
+                <div class="p-btn btn-nav prev swiper-button-prev"><span class="ico ico-alt-arrow-left"></span></div>
+                <div class="p-btn btn-nav next swiper-button-next"><span class="ico ico-alt-arrow-right"></span></div>
               </div>
             </div>
           </div>
@@ -1115,6 +1076,7 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
       </div>
     `);
+
 
     // === Додаємо автоконтраст для іконок закриття та кнопок навігації ===
     function updateCloseBtnIconColor() {
@@ -1145,7 +1107,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const canvas = document.createElement('canvas');
       canvas.width = 1;
       canvas.height = 1;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
       const imgRect = img.getBoundingClientRect();
       function getBrightnessAtButton(btn) {
         const rect = btn.getBoundingClientRect();
@@ -1226,7 +1188,7 @@ document.addEventListener('DOMContentLoaded', function () {
       img.onload = function () {
         const size = 60, canvas = document.createElement('canvas');
         canvas.width = size; canvas.height = size;
-        const ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
         let ratio = Math.min(size / img.width, size / img.height);
         let drawWidth = img.width * ratio, drawHeight = img.height * ratio;
         let offsetX = (size - drawWidth) / 2, offsetY = (size - drawHeight) / 2;
@@ -1289,6 +1251,7 @@ document.addEventListener('DOMContentLoaded', function () {
         nextEl: '#gallery-fullscreen .swiper-button-next',
         prevEl: '#gallery-fullscreen .swiper-button-prev',
       },
+      touchReleaseOnEdges: true, 
       on: {
         init() { this.slideToLoop(startIdx, 0, false); },
         slideChange() {
@@ -1301,6 +1264,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     gallerySwiper.init();
     window.gallerySwiper = gallerySwiper;
+
     setTimeout(() => {
       const realIdx = gallerySwiper.realIndex || 0;
       const activeThumb = thumbs.querySelectorAll('.gallery-thumb')[realIdx];
@@ -1432,31 +1396,36 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function setupLogoScroll(selector, speed = 1) {
-    const container = document.querySelector(selector);
-    if (!container) return;
+  const container = document.querySelector(selector);
+  if (!container) return;
 
-    const wrapper = container.querySelector('.scroll-wrapper');
-    const row = wrapper.querySelector('.scroll-row');
+  const wrapper = container.querySelector('.scroll-wrapper');
+  const row = wrapper.querySelector('.scroll-row');
+
+  // Додаємо ще 2 дублікати (всього буде 3)
+  for (let i = 0; i < 3; i++) {
     const clone = row.cloneNode(true);
     wrapper.appendChild(clone);
-
-    let rowWidth = row.offsetWidth;
-    let scroll = 0;
-
-    function animate() {
-      scroll += speed;
-      if (scroll >= rowWidth) scroll -= rowWidth;
-      wrapper.style.transform = `translateX(-${scroll}px)`;
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    const resizeObserver = new ResizeObserver(() => {
-      rowWidth = row.offsetWidth;
-    });
-    resizeObserver.observe(row);
   }
+
+  let rowWidth = row.offsetWidth;
+  let scroll = 0;
+
+  function animate() {
+    scroll += speed;
+    if (scroll >= rowWidth) scroll -= rowWidth;
+    wrapper.style.transform = `translateX(-${scroll}px)`;
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  const resizeObserver = new ResizeObserver(() => {
+    rowWidth = row.offsetWidth;
+  });
+  resizeObserver.observe(row);
+}
+
 
 
 
@@ -1488,23 +1457,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector("#subscription");
-    if (!form) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("#subscription");
+  if (!form) return;
 
-    const input = form.querySelector("input[type='email']");
-    const button = form.querySelector("button");
+  const input = form.querySelector("input[type='email']");
+  const button = form.querySelector("button");
 
-    function adjustPadding() {
-        const buttonWidth = button.offsetWidth;
-        input.style.paddingRight = (buttonWidth + 15) + "px";
-    }
+  function adjustPadding() {
+    const buttonWidth = button.offsetWidth;
+    input.style.paddingRight = (buttonWidth + 15) + "px";
+  }
 
-    // Виклик одразу
-    adjustPadding();
+  // Виклик одразу
+  adjustPadding();
 
-    // Виклик при ресайзі для адаптивності
-    window.addEventListener("resize", adjustPadding);
+  // Виклик при ресайзі для адаптивності
+  window.addEventListener("resize", adjustPadding);
 });
 
 
@@ -1517,48 +1486,120 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Скрипт для адаптивного меню з More (додає клас drop-link при перенесенні без зміни логіки)
 window.addEventListener('DOMContentLoaded', function () {
-    const menu = document.querySelector('#menu');
-    let moreMenu = null;
+  const menu = document.querySelector('#menu');
+  const menuToggle = document.querySelector('#menuToggle');
+  const body = document.body;
 
-    function createMoreMenu() {
-        moreMenu = document.createElement('div');
-        moreMenu.id = 'moreMenu';
-        moreMenu.className = 'cs-dropdown';
-        moreMenu.innerHTML = `
-            <button id="more-button" class="cs-drop-toggle p-btn btn-link btn-dark-green btn-sm">
-                <span class="btn-inner">More<span class="ico ico-arrow-sm-down-filled"></span></span>
-            </button>
-            <div class="cs-dropdown-list">
-                <div class="drop-list-wrapper"></div>
-            </div>
-        `;
-        menu.appendChild(moreMenu);
+  if (!menu || !menuToggle) return;
+
+  let moreMenu = null;
+  let closeButton = null;
+
+  // Створюємо overlay один раз
+  const overlay = document.createElement('div');
+overlay.className = 'menu-overlay';
+menu.insertAdjacentElement('afterend', overlay);
+
+  function toggleMenu() {
+    const isOpened = menu.classList.toggle('opened');
+    body.classList.toggle('static', isOpened);
+    overlay.classList.toggle('opened', isOpened);
+  }
+
+  function closeMenu() {
+    menu.classList.remove('opened');
+    body.classList.remove('static');
+    overlay.classList.remove('opened');
+  }
+
+  menuToggle.addEventListener('click', toggleMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
+  });
+
+  function createMoreMenu() {
+    moreMenu = document.createElement('div');
+    moreMenu.id = 'moreMenu';
+    moreMenu.className = 'cs-dropdown';
+    moreMenu.innerHTML = `
+      <button id="more-button" class="cs-drop-toggle p-btn btn-link btn-dark-green btn-sm">
+        <span class="btn-inner">More<span class="ico ico-arrow-sm-down-filled"></span></span>
+      </button>
+      <div class="cs-dropdown-list">
+        <div class="drop-list-wrapper"></div>
+      </div>
+    `;
+    menu.appendChild(moreMenu);
+  }
+
+  function addCloseButton() {
+    if (closeButton || window.innerWidth > 768) return;
+
+    closeButton = document.createElement('button');
+    closeButton.id = 'closeMenu';
+    closeButton.className = 'p-btn btn-link close-btn';
+    closeButton.type = 'button';
+    closeButton.innerHTML = `<span class="ico ico-close"></span>`;
+
+    closeButton.addEventListener('click', closeMenu); // використовуємо одну функцію
+
+    menu.prepend(closeButton);
+  }
+
+  function removeCloseButton() {
+    if (closeButton) {
+      closeButton.remove();
+      closeButton = null;
+    }
+  }
+
+  function updateMenu() {
+    if (window.innerWidth <= 768) {
+      menu.classList.add('mobile-menu');
+      if (moreMenu) moreMenu.style.display = 'none';
+      menu.querySelectorAll('.h-link').forEach(link => {
+        link.classList.remove('drop-link');
+        link.style.display = '';
+      });
+      addCloseButton();
+      return;
     }
 
-    function updateMenu() {
-        if (!moreMenu) createMoreMenu();
-        const wrapper = moreMenu.querySelector('.drop-list-wrapper');
-        wrapper.innerHTML = '';
+    menu.classList.remove('mobile-menu');
+    removeCloseButton();
 
-        const links = Array.from(menu.querySelectorAll('.h-link'));
-        moreMenu.style.display = 'none';
+    if (!moreMenu) createMoreMenu();
+    const wrapper = moreMenu.querySelector('.drop-list-wrapper');
+    wrapper.innerHTML = '';
 
-        links.forEach(link => link.style.display = '');
+    const links = Array.from(menu.querySelectorAll('.h-link'));
+    moreMenu.style.display = 'none';
 
-        let lastVisibleIndex = links.length - 1;
+    links.forEach(link => link.style.display = '');
 
-        while (menu.scrollWidth > menu.clientWidth && lastVisibleIndex >= 0) {
-            const linkToMove = links[lastVisibleIndex];
-            const newLink = linkToMove.cloneNode(true);
-            newLink.classList.add('drop-link'); // додаємо клас drop-link до копії
-            wrapper.prepend(newLink);
-            linkToMove.classList.add('drop-link'); // додаємо клас drop-link до оригіналу при перенесенні
-            linkToMove.style.display = 'none';
-            moreMenu.style.display = '';
-            lastVisibleIndex--;
-        }
+    let lastVisibleIndex = links.length - 1;
+
+    while (menu.scrollWidth > menu.clientWidth && lastVisibleIndex >= 0) {
+      const linkToMove = links[lastVisibleIndex];
+      const newLink = linkToMove.cloneNode(true);
+      newLink.classList.add('drop-link');
+      wrapper.prepend(newLink);
+      linkToMove.classList.add('drop-link');
+      linkToMove.style.display = 'none';
+      moreMenu.style.display = '';
+      lastVisibleIndex--;
     }
+  }
 
-    window.addEventListener('resize', updateMenu);
-    updateMenu();
+  window.addEventListener('resize', updateMenu);
+  updateMenu();
 });
+
+
+
+
+

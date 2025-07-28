@@ -20,7 +20,10 @@
     <header id="header" class="main-header pad-sides-70">
         <div class="p-container">
             <div class="header-cont">
+                <div class="h-left">
                 <a href="#" class="logo"><img src="/static-files/img/logo.svg" alt=""></a>
+                <button id="menuToggle" class="p-btn btn-link btn-dark-green btn-sm">Menu</button>
+                </div>
 
                 <div class="h-right">
                     <div id="menu" class="main-menu">
@@ -88,7 +91,8 @@
                                 </h5>
                             </div>
                             <div class="button-box">
-                                <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted" data-target="#m-registration">
+                                <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted"
+                                    data-target="#m-registration">
                                     <span class="btn-inner"><span class="ico ico-token-stroke"></span>Buy token</span>
                                 </button>
                                 <a href="#" class="p-btn btn-solid btn-white-blur btn-lg">
@@ -109,7 +113,7 @@
                             <div class="chart-dash wrap-1">
                                 <div class="chart-dash wrap-2">
                                     <div class="chart-dash wrap-3">
-                                        <div class="chart-box br-40">
+                                        <div class="chart-box pad-40 br-40">
                                             <strong class="sm-block-title">
                                                 Annual <br>income
                                             </strong>
@@ -138,7 +142,7 @@
                         </div>
                     </div>
                     <div class="box-wrapper">
-                        <div class="list-box blur br-40">
+                        <div class="list-box b-blur br-40">
                             <div class="inner-list pad-40">
                                 <div class="item">
                                     <div class="icon">
@@ -258,14 +262,14 @@
                                                 class="ico ico-arrow-sm-right-filled"></span></button>
                                     </div>
                                     <div class="c-location" data-lat="50.4501" data-lng="30.5234">
-                                        <strong class="location-title">Kyiv, <span>Ukraine</span></strong>
+                                        <strong class="location-title">Kyiv, Ukraine</strong>
                                         <span class="loc-description">Total area of ​​plantations - 43 hectares. The
                                             number
                                             of planted trees - over
                                             640k</span>
                                     </div>
                                     <div class="c-location" data-lat="48.8566" data-lng="2.3522">
-                                        <strong class="location-title">Paris, <span>France</span></strong>
+                                        <strong class="location-title">Paris, France</strong>
                                         <span class="loc-description">Total area of ​​plantations - 12 hectares. The
                                             number
                                             of planted trees - over
@@ -300,7 +304,7 @@
                                             100k</span>
                                     </div>
                                     <div class="c-location" data-lat="52.2297" data-lng="21.0122">
-                                        <strong class="location-title">Warsaw, <span>Poland</span></strong>
+                                        <strong class="location-title">Warsaw, Poland</strong>
                                         <span class="loc-description">Total area of ​​plantations - 9 hectares. The
                                             number
                                             of planted trees - over
@@ -470,8 +474,100 @@
                         <div class="tree-image">
                             <img src="/static-files/img/paulownia-tree.png" alt="">
                             <!-- <video autoplay="" muted="" loop="" playsinline="" class="video-background"> <source src="/static-files/img/media-gallery/0713 (1).mp4" type="video/mp4"> </video> -->
+                             <div class="tree-back"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <section id="grow" class="s-wrapper main-section pad-sides-70 pad-top-90 pad-bottom-210">
+            <div class="section-inner">
+                <div class="p-container">
+                    <div class="section-title">
+                        <h2 class="title-text">Tree Growth Chart</h2>
+                        <p class="subtitle-text">Stages of tree growth and its impact on the environment</p>
+                    </div>
+                </div>
+                <div class="p-container max-width-1200">
+                    <div class="grow-cont">
+                        <div class="g-main">
+                            <div class="grow-half first-half">
+                                <div class="stage">
+                                    <div class="stage-item it-top">
+                                        <div class="a-title">Seedling</div>
+                                        <div class="a-info">
+                                            <span class="ico ico-check"></span>
+                                            <div class="a-description">1 year</div>
+                                        </div>
+                                        <div class="pointer">
+                                            <span class="p-line"></span>
+                                            <span class="p-circle"></span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-wrapper">
+                                        <img class="tree-img" src="/static-files/img/1-year.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="stage">
+                                    <div class="stage-item it-top">
+                                        <div class="a-title">Active Growth</div>
+                                        <div class="a-info">
+                                            <span class="ico ico-check"></span>
+                                            <div class="a-description">3 years</div>
+                                        </div>
+                                        <div class="pointer">
+                                            <span class="p-line"></span>
+                                            <span class="p-circle"></span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-wrapper">
+                                        <img class="tree-img" src="/static-files/img/3-years.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grow-half second-half">
+                                <div class="stage">
+                                    <div class="stage-item it-top">
+                                        <div class="a-title">Max CO₂ Absorption</div>
+                                        <div class="a-info">
+                                            <span class="ico ico-check"></span>
+                                            <div class="a-description">5 years</div>
+                                        </div>
+                                        <div class="pointer">
+                                            <span class="p-line"></span>
+                                            <span class="p-circle"></span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-wrapper">
+                                        <img class="tree-img" src="/static-files/img/5-years.jpg" alt="">
+                                    </div>
+                                </div>
+                                <div class="stage">
+                                    <div class="stage-item it-top">
+                                        <div class="a-title">Mature Tree</div>
+                                        <div class="a-info">
+                                            <span class="ico ico-check"></span>
+                                            <div class="a-description">8 years</div>
+                                        </div>
+                                        <div class="pointer">
+                                            <span class="p-line"></span>
+                                            <span class="p-circle"></span>
+                                        </div>
+                                    </div>
+                                    <div class="tree-wrapper">
+                                        <img class="tree-img" src="/static-files/img/8-years.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-after">8 years for a tree - hundreds of years of benefit for the planet</div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -498,7 +594,7 @@
                                     today to earn additional income while making a positive impact on the environment
                                 </p>
                             </div>
-                            <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted">
+                            <button class="p-btn btn-solid btn-dark-green btn-lg btn-dotted" data-target="#m-registration">
                                 <span class="btn-inner"><span class="ico ico-token-stroke"></span>Buy token</span>
                             </button>
                         </div>
@@ -546,7 +642,7 @@
                 </div>
                 <div class="p-container pad-sides-70">
                     <div class="c-adva-cont">
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-money-bag"></span>
                                 <div class="item-text">
@@ -558,7 +654,7 @@
                             </div>
                             <div class="dotted-back green"></div>
                         </div>
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-leaf"></span>
                                 <div class="item-text">
@@ -570,7 +666,7 @@
                             </div>
                             <div class="dotted-back green"></div>
                         </div>
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-tree"></span>
                                 <div class="item-text">
@@ -582,7 +678,7 @@
                             </div>
                             <div class="dotted-back green"></div>
                         </div>
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-qr-code"></span>
                                 <div class="item-text">
@@ -594,7 +690,7 @@
                             </div>
                             <div class="dotted-back green"></div>
                         </div>
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-analysis"></span>
                                 <div class="item-text">
@@ -606,7 +702,7 @@
                             </div>
                             <div class="dotted-back green"></div>
                         </div>
-                        <div class="c-adva-item blur br-40">
+                        <div class="c-adva-item b-blur br-40">
                             <div class="item-inner pad-40">
                                 <span class="ico ico-globe"></span>
                                 <div class="item-text">
@@ -710,7 +806,7 @@
                         </div>
                         <div class="right-side">
                             <div class="form-wr">
-                                <form id="send-message" class="cs-contact-form main-green pad-50 br-40">
+                                <form id="signUp" class="cs-contact-form main-green pad-50 br-40">
                                     <div class="f-col gap-30">
                                         <div class="f-row">
                                             <div class="c-form required">
@@ -894,7 +990,7 @@
                                                 <input type="email" name="email" required
                                                     class="form-in f-lg f-stroke dark-back" placeholder="Email address">
                                                 <button class="p-btn btn-solid btn-green btn-md fit-cont" type="submit">
-                                                    <span class="btn-inner">Підписатись</span>
+                                                    <span class="btn-inner">Subscribe</span>
                                                 </button>
                                             </div>
                                         </form>
@@ -924,7 +1020,8 @@
                         <span class="ico ico-arrow-left-medium btn-nav btn-back" style="display: none;"></span>
                         <h3 class="modal-title"></h3>
                     </div>
-                    <button class="p-btn btn-link close-btn" type="button">
+                    <button class="p-btn btn-link close-btn" 
+                    type="button">
                         <span class="ico ico-close"></span>
                     </button>
                 </div>
@@ -933,7 +1030,8 @@
                         <div class="contact-cont" style="min-height: auto;">
                             <div class="left-side">
                                 <div class="section-title align-left gap-20">
-                                    <span class="ico ico-shield-filled" style="font-size: 30px; height: 60px; width: 60px;"></span>
+                                    <span class="ico ico-shield-filled"
+                                        style="font-size: 30px; height: 60px; width: 60px;"></span>
                                     <h3 class="title-text align-left"><strong>Sign Up</strong>
                                         And Secure Your Future </h3>
                                     <p class="subtitle-text align-left" style="font-size: 20px;">Join our sustainable
@@ -947,7 +1045,7 @@
                             </div>
                             <div class="right-side">
                                 <div class="form-wr">
-                                    <form id="send-message" class="cs-contact-form main-green pad-50 br-40"
+                                    <form id="signUp" class="cs-contact-form main-green pad-50 br-30"
                                         style="min-width: 420px;">
                                         <div class="f-col gap-30">
                                             <div class="f-row">
@@ -967,13 +1065,12 @@
                                             </div>
                                             <div class="c-form required">
                                                 <div class="cs-dropdown" data-value="">
-                                                    <div
-                                                        class="cs-drop-toggle cs-select f-md dark-back stretch">Choose
+                                                    <div class="cs-drop-toggle cs-select f-md dark-back stretch">Choose
                                                         country</div>
                                                     <div class="cs-dropdown-list cs-select-list stretch">
                                                         <div class="drop-list-wrapper">
                                                             <a href="#" class="drop-link sel-item" data-value="ua">
-                                                                <div class="country-item"><img
+                                                               <div class="country-item"><img
                                                                         src="/static-files/img/ukarainian.jpg" alt="">
                                                                     <span>Ukraine</span>
                                                                 </div>
@@ -1088,7 +1185,8 @@
     </div>
 
 
-    <script src="/static-files/js/main.js"></script>
+
+    <script src="/static-files/js/main.js?v=2"></script>
 </body>
 
 </html>
